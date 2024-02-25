@@ -1,0 +1,36 @@
+Enter_X = int(input("Enter X: "))
+Enter_Y = int(input("Enter Y: "))
+
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y != 0:
+        return x / y
+    else:
+        return "Cannot divide by Zero"
+
+print("Select operation:")
+print("1. Addition")
+print("2. Subtraction")
+print("3. Multiplication")
+print("4. Division")
+
+Choice_input = input("Enter choice (1/2/3/4): ")
+
+if Choice_input == "1":
+    print(f"Result: {add(Enter_X, Enter_Y)}")
+elif Choice_input == "2":
+    print(f"Result: {subtract(Enter_X, Enter_Y)}")
+elif Choice_input == "3":
+    print(f"Result: {multiply(Enter_X, Enter_Y)}")
+elif Choice_input == "4":
+    print(f"Result: {divide(Enter_X, Enter_Y)}")
+else:
+    print("Invalid input. Please enter a valid choice (1/2/3/4).")
