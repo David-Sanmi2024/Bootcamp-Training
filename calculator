@@ -1,36 +1,59 @@
-Enter_X = int(input("Enter X: "))
-Enter_Y = int(input("Enter Y: "))
+import math  # Import the math module for additional functionality
 
 def add(x, y):
     return x + y
-
 def subtract(x, y):
     return x - y
-
 def multiply(x, y):
     return x * y
-
 def divide(x, y):
     if y != 0:
         return x / y
     else:
         return "Cannot divide by Zero"
+#New function Added
+def sqrt(x):
+  return math.sqrt(x)
+def power(x, y):
+    return x ** y
 
-print("Select operation:")
-print("1. Addition")
-print("2. Subtraction")
-print("3. Multiplication")
-print("4. Division")
+# Main program loop
+while True:
+    print("Select operation:")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Square Root")
+    print("6. Power (x^y)")
+    print("7. Exit")
 
-Choice_input = input("Enter choice (1/2/3/4): ")
+    # Take user input for operation choice
+    choice_input = input("Enter choice (1/2/3/4/5/6/7): ")
 
-if Choice_input == "1":
-    print(f"Result: {add(Enter_X, Enter_Y)}")
-elif Choice_input == "2":
-    print(f"Result: {subtract(Enter_X, Enter_Y)}")
-elif Choice_input == "3":
-    print(f"Result: {multiply(Enter_X, Enter_Y)}")
-elif Choice_input == "4":
-    print(f"Result: {divide(Enter_X, Enter_Y)}")
-else:
-    print("Invalid input. Please enter a valid choice (1/2/3/4).")
+    # Check if the user wants to exit the program
+    if choice_input == "7":
+        print("Exiting the program. Goodbye!")
+        break
+
+    # Check if the user input is a valid choice
+    elif choice_input in ["1", "2", "3", "4", "5", "6"]:
+        # Take user input for numbers
+        enter_x = float(input("Enter X: "))
+        enter_y = float(input("Enter Y: "))
+
+        # Perform the selected operation and print the result
+        if choice_input == "1":
+            print(f"Result: {int(add(enter_x, enter_y))}")
+        elif choice_input == "2":
+            print(f"Result: {int(subtract(enter_x, enter_y))}")
+        elif choice_input == "3":
+            print(f"Result: {int(multiply(enter_x, enter_y))}")
+        elif choice_input == "4":
+            print(f"Result: {int(divide(enter_x, enter_y))}")
+        elif choice_input == "5":
+            print(f"Square root of {enter_x}: {int(sqrt(enter_x))}")
+        elif choice_input == "6":
+            print(f"Result: {int(power(enter_x, enter_y))}")
+    else:
+        print("Invalid input. Please enter a valid choice (1/2/3/4/5/6).")
